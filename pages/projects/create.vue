@@ -143,7 +143,7 @@ async function create() {
     const dataToSend: NewProjectFormValue = {
       es: {
         title: projectData.name,
-        slug: projectData.name.toLowerCase().replace(/\s/g, '-'),
+        slug: projectData.name.toLowerCase().replace(/\s/g, '-').replace(/[^a-z0-9-]/g, ''),
         description: projectData.description,
       },
       min_price:
